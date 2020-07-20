@@ -18,50 +18,48 @@ class GildedRose {
             return;
          }
 	     if (item.name.equals("Aged Brie")) {
-	   		 if (item.quality < 50) {
-	             item.quality = item.quality + 1;
-	         }
+	    	 increaseQuality(item);
 	     }else if(item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {	 
-	    	 if (item.quality < 50) {
-	    		 item.quality = item.quality + 1; 
-	    	 }
+	    	 increaseQuality(item);
 	   		 
 	    	 if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 	             if (item.sellIn < 11) {
-	                 if (item.quality < 50) {
-	                     item.quality = item.quality + 1;
-	                 }
+	            	 increaseQuality(item);
 	             }
 	
 	             if (item.sellIn < 6) {
-	                 if (item.quality < 50) {
-	                     item.quality = item.quality + 1;
-	                 }
+	            	 increaseQuality(item);
 	             }
 	         }
 	   	 }else {
-	   		 if (item.quality > 0) {
-	   			item.quality = item.quality - 1;
-	         }
+	   		decreaseQuality(item);
 	   	 }
    	
 	   item.sellIn = item.sellIn - 1;
        
 
        if (item.sellIn < 0) {
-	       	if (item.name.equals("Aged Brie")) {
-	       		if (item.quality < 50) {
-	                item.quality = item.quality + 1;
-	            }
+	       if (item.name.equals("Aged Brie")) {
+	       		increaseQuality(item);
 	       	}else {
 	       		if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 	       			item.quality = item.quality - item.quality;
 	            } else {
-	               if (item.quality > 0) {
-	            	   item.quality = item.quality - 1;
-                   }
+	               decreaseQuality(item);
 	            }
-	       	}
-       }
+	        }
+        }
+    }
+    
+    public void increaseQuality(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
+    }
+    
+    public void decreaseQuality(Item item) {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
+        }
     }
 }
