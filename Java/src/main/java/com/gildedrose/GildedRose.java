@@ -40,6 +40,10 @@ class GildedRose {
              }
 	   	 }else {
 	   		decreaseQuality(item);
+	   		
+	   		if (item.sellIn < 0) {
+                decreaseQuality(item);
+            }
 	   	 }
 
          if (item.sellIn < 0) {
@@ -47,7 +51,7 @@ class GildedRose {
 	       	}else {
 	       		if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 	            } else {
-	               decreaseQuality(item);
+	              
 	            }
 	        }
         }
