@@ -7,6 +7,7 @@ public class NormalItem extends Item {
 
 	 @Override
     public void upgrade() {
+	    setSellIn(getSellIn() - 1);
 		decreaseQuality();
         if (getSellIn() < 0) {
             decreaseQuality();

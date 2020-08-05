@@ -9,14 +9,8 @@ public class BackstagePassesItem extends Item{
     public void upgrade() {
 		setSellIn(getSellIn() - 1);
         increaseQuality();
-        if (getSellIn() < 10) {
-            increaseQuality();
-        }
-        if (getSellIn() < 5) {
-            increaseQuality();
-        }
-        if (getSellIn() < 0) {
-            setQuality(0);
-        }
+        if (getSellIn() < 10) increaseQuality();
+        if (getSellIn() < 5)  increaseQuality();
+        if (getSellIn() < 0)  setQuality(0);
     }
 }
