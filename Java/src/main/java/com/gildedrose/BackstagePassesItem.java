@@ -5,7 +5,8 @@ public class BackstagePassesItem extends Item{
 	    super(name, sellIn, quality);
 	}
 
-    public void upgradeBackstagePasses() {
+	@Override
+    public void upgrade() {
         sellIn = sellIn - 1;
         increaseQuality();
         if (sellIn < 10) {

@@ -5,7 +5,8 @@ public class NormalItem extends Item {
         super(name, sellIn, quality);
     }
 
-    public void upgradeNormal() {
+	 @Override
+    public void upgrade() {
         sellIn = sellIn - 1;
         decreaseQuality();
         if (sellIn < 0) {

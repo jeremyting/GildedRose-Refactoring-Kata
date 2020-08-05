@@ -19,6 +19,8 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
+    public void upgrade() { }
+    
     public void decreaseQuality() {
         if (quality > 0) {
            quality = quality - 1;
