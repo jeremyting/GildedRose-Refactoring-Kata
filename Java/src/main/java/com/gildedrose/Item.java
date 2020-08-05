@@ -14,38 +14,24 @@ public class Item {
         this.quality = quality;
     }
 
-   @Override
-   public String toString() {
+    @Override
+    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-   public void updateBackstagePasses(GildedRose gildedRose) {
-       sellIn = sellIn - 1;
-       increaseQuality();
-       if (sellIn < 10) {
+    public void updateAgedBrie(GildedRose gildedRose) {
+        sellIn = sellIn - 1;
+        increaseQuality();
+        if (sellIn < 0) {
            increaseQuality();
-       }
-       if (sellIn < 5) {
-           increaseQuality();
-       }
-       if (sellIn < 0) {
-           quality = 0;
-       }
-   }
+        }
+    }
 
-   public void updateAgedBrie(GildedRose gildedRose) {
-       sellIn = sellIn - 1;
-       increaseQuality();
-       if (sellIn < 0) {
-           increaseQuality();
-       }
-   }
-
-   public void decreaseQuality() {
-       if (quality > 0) {
+    public void decreaseQuality() {
+        if (quality > 0) {
            quality = quality - 1;
        }
-   }
+    }
 
    public void increaseQuality() {
        if (quality < 50) {
