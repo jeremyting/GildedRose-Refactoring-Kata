@@ -14,6 +14,22 @@ public class Item {
         this.quality = quality;
     }
 
+    public int getSellIn() {
+        return this.sellIn;
+    }
+
+    public int getQuality() {
+        return this.quality;
+    }
+
+    public void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
+    }
+
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
+    
     @Override
     public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
@@ -22,14 +38,14 @@ public class Item {
     public void upgrade() { }
     
     public void decreaseQuality() {
-        if (quality > 0) {
-           quality = quality - 1;
+       if (getQuality() > 0) {
+          setQuality(getQuality() - 1);
        }
     }
 
    public void increaseQuality() {
-       if (quality < 50) {
-           quality = quality + 1;
+       if (getQuality() < 50) {
+    	   setQuality(getQuality() + 1);
        }
    }
 }

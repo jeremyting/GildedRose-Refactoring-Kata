@@ -7,16 +7,16 @@ public class BackstagePassesItem extends Item{
 
 	@Override
     public void upgrade() {
-        sellIn = sellIn - 1;
+		setSellIn(getSellIn() - 1);
         increaseQuality();
-        if (sellIn < 10) {
+        if (getSellIn() < 10) {
             increaseQuality();
         }
-        if (sellIn < 5) {
+        if (getSellIn() < 5) {
             increaseQuality();
         }
-        if (sellIn < 0) {
-            quality = 0;
+        if (getSellIn() < 0) {
+            setQuality(0);
         }
     }
 }
