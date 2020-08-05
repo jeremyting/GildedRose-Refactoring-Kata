@@ -18,14 +18,6 @@ public class Item {
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
-   
-   public void updateNormal(GildedRose gildedRose) {
-       sellIn = sellIn - 1;
-       decreaseQuality();
-       if (sellIn < 0) {
-           decreaseQuality();
-       }
-   }
 
    public void updateBackstagePasses(GildedRose gildedRose) {
        sellIn = sellIn - 1;
